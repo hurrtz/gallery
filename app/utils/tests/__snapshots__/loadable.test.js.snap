@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loadable /> should render and match the snapshot 1`] = `
+<React.Suspense
+  fallback={null}
+>
+  <UNDEFINED />
+</React.Suspense>
+`;
+
+exports[`<Loadable /> should render with a given fallback component and match the snapshot 1`] = `
+<React.Suspense
+  fallback={
+    <div>
+      fallback
+    </div>
+  }
+>
+  <UNDEFINED />
+</React.Suspense>
+`;
+
+exports[`<Loadable /> should render without a given fallback component and match the snapshot 1`] = `
+<React.Suspense
+  fallback={false}
+>
+  <UNDEFINED />
+</React.Suspense>
+`;
