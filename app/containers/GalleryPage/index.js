@@ -1,5 +1,32 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
-export default function GalleryPage() {
-  return <h1>GalleryPage</h1>;
-}
+const styles = {
+  container: {
+    paddingTop: '2em',
+  },
+  card: {
+    fontWeight: 100,
+    textAlign: 'center',
+  },
+};
+
+const GalleryPage = ({ classes }) => (
+  <Container className={classes.container}>
+    <Paper>
+      <Typography variant="h1" className={classes.card}>
+        Car Photos
+      </Typography>
+    </Paper>
+  </Container>
+);
+
+GalleryPage.propTypes = {
+  classes: PropTypes.object,
+};
+
+export default withStyles(styles)(GalleryPage);
