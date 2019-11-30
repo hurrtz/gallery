@@ -15,7 +15,7 @@ export function* fetchCar() {
         .then(response => ({
           id: response.id,
           title: response.title,
-          imageURLs: response.images.map(image => image.uri),
+          imageURLs: [...new Set(response.images.map(image => image.uri))],
         }));
 
       if (fetchedCar) {
