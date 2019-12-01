@@ -16,13 +16,9 @@ describe('configureStore', () => {
 });
 
 describe('configureStore params', () => {
-  it('should call window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__', () => {
-    /* eslint-disable no-underscore-dangle */
-    const compose = jest.fn();
+  it('should initiate with no given params', () => {
+    const store = configureStore(undefined, browserHistory);
 
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ = () => compose;
-    configureStore(undefined, browserHistory);
-    expect(compose).toHaveBeenCalled();
-    /* eslint-enable */
+    expect(Object.keys(store.getState()).length).toBeGreaterThan(0);
   });
 });

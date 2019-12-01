@@ -17,7 +17,8 @@ export default function configureStore(initialState = {}, history) {
 
   const sagaMiddleware = createSagaMiddleware(reduxSagaMonitorOptions);
   const middlewares = [sagaMiddleware, routerMiddleware(history)];
-  const enhancers = [applyMiddleware(...middlewares)];
+  const mountedMiddlewares = applyMiddleware(...middlewares);
+  const enhancers = [mountedMiddlewares];
 
   const store = createStore(
     rootReducer,
@@ -26,6 +27,7 @@ export default function configureStore(initialState = {}, history) {
   );
 
   store.runSaga = sagaMiddleware.run;
+
   sagaMiddleware.run(rootSaga);
 
   /* istanbul ignore next */
