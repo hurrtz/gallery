@@ -37,6 +37,7 @@ const PictureGallery = ({ title, imageURLs, setImageURL, onShowFullSize }) => {
       key={url}
       className={classes.card}
       onClick={() => handleShowFullImage(url)}
+      data-testid="card"
     >
       <CardMedia image={generateURL(url, true)} component="img" title={title} />
     </Card>
@@ -48,8 +49,9 @@ const PictureGallery = ({ title, imageURLs, setImageURL, onShowFullSize }) => {
 
       <CardActions>
         <IconButton
-          aria-label="show bigger image"
+          aria-label="show image"
           onClick={() => handleShowFullImage(url)}
+          data-testid="button"
         >
           <ZoomInIcon />
         </IconButton>
