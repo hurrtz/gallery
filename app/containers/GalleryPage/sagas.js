@@ -10,6 +10,7 @@ export function* fetchCar() {
   if (car) {
     try {
       // map the response to something the reducer can work with
+      /* istanbul ignore next */
       const fetchedCar = yield fetch(FETCH_CAR_URL)
         .then(response => response.json())
         .then(response => ({
@@ -18,6 +19,7 @@ export function* fetchCar() {
           imageURLs: [...new Set(response.images.map(image => image.uri))],
         }));
 
+      /* istanbul ignore next */
       if (fetchedCar) {
         yield put(setCar(fetchedCar));
       }
