@@ -22,7 +22,7 @@ export function* fetchCar() {
         yield put(setCar(fetchedCar));
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   }
 }
