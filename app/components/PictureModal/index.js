@@ -79,6 +79,7 @@ const PictureModal = ({ isModalVisible, onOpenModal, title, imageURL }) => {
               aria-label="close modal"
               onClick={handleClose}
               className={classes.iconClose}
+              data-testid="button"
             >
               <CloseIcon />
             </IconButton>
