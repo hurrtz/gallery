@@ -25,16 +25,25 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  title: {
+    display: 'inline-block',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
+  },
   iconClose: {
     height: '60px',
     width: '60px',
   },
   image: {
-    height: '100%',
+    maxHeight: '100%',
+    maxWidth: '100%',
   },
   imageWrapper: {
     height: '100%',
-    textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   backdrop: {
     backgroundColor: '#FFF',
@@ -65,7 +74,7 @@ const PictureModal = ({ isModalVisible, onOpenModal, title, imageURL }) => {
       <Fade in={isModalVisible}>
         <div className={classes.modalContent}>
           <Typography variant="h2" className={classes.headline}>
-            <span>{title}</span>
+            <span className={classes.title}>{title}</span>
             <IconButton
               aria-label="close modal"
               onClick={handleClose}
